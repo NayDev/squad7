@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
 body {
@@ -15,7 +16,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+button {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
 }
@@ -61,7 +63,6 @@ nav a {
 
 .homeSection div {
   background-color: rgb(228, 142, 72);
-
   width: 150px;
   display: flex;
   flex-direction: column;
@@ -75,5 +76,14 @@ nav a {
 }
 
 .homeSection div p {
+  padding: 15px 0;
+  color: white;
+}
+
+.homeSection div button {
   padding: 10px;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
 }
