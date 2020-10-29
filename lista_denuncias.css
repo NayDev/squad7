@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+h3{
+    padding: 20px;
+}
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 60vw;
+    height: 10vh;
+    border: 1px solid black;
+}
+
+th, td,tr{
+    border: 1px solid black;
+}
+
+.menu {
+    background:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding:5px;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+.container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+#rodape{
+    text-align: center;
+}
