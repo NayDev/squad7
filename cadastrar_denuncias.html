@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-  </head>
-  <body>
-    <form>
-      <h1>Cadastrar Denuncia</h1>
-      <label for="ubs">Escolha a UBS</label>
-      <input type="text" name="ubs" placeholder="Escolha a UBS">
-      <label for="">Medicamentos em falta</label>
-        <input type="text" name>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Denuncia</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="lista_denuncias.html">Denuncias Recentes</a>
+    <a href="cadastrar_denuncias.html">Denunciar</a>
+    <a href="fale_conosco_sobre.html">Fale Conosco</a>
+  </nav>
+  <div>
+    <form>
+      <div class="container">
+        <div class="form-group">
+          <h1>Cadastrar Denuncia</h1>
+          <label for="ubs">Escolha a UBS</label>
+          <select name="ubs" class="form-control" placeholder="Escolha a UBS">
+            <option value="valor1">Valor 1</option> 
+            <option value="valor2">Valor 2</option>
+            <option value="valor3">Valor 3</option>
+          </select>
+          <input type="select" class="form-control" name="ubs" placeholder="Escolha a UBS">
+          <label for="">Medicamentos em falta</label>
+          <input type="text" class="form-control" name="med" placeholder="Escolha o medicamento">
+          <label for="data">Data de quando faltou o remedio: </label>
+          <input type="checkbox" name="data"> Hoje
+          <input type="date" class="form-control">
+          <label for="coment">Observações e comentarios: </label>
+          <input type="textarea" class="form-control"><br>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
     </form>
-  </body>
+  </div>
+</body>
 </html>
