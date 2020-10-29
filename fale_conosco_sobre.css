@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.menu {
+    background:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding:5px;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.sobre{
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+.formulario{
+    text-align: center;
+}
+#rodape{
+    text-align: center;
+}
