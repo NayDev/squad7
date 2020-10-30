@@ -56,7 +56,7 @@
           <a class="nav-link text-white" href="lista_denuncias.php">Denuncias Recentes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-white" href="cadastrar_denuncias.html">Denunciar</a>
+          <a class="nav-link active text-white" href="cadastrar_denuncias.php">Denunciar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active text-white" href="fale_conosco_sobre.php">Fale Conosco</a>
@@ -103,7 +103,7 @@
                 $sql = "select * from fale_conosco";
                 $result = $conn->query($sql);
 
-                if($result->num_rows >= 0){
+                if($result->num_rows > 0){
                     while($rows = $result->fetch_assoc()){
                         echo "Data: ", date('d/m/Y H:i:s', strtotime($rows['data'])); "<br />";
                         echo "Nome: ", $rows['nome'], "<br />";
@@ -114,7 +114,12 @@
                     echo "Nenhum comentário ainda!!!";
                 }
                 
-            ?>        
+            ?>   
+            <script>
+              if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+              }
+            </script>     
     </div>
   </main>
     <footer class="text-center">

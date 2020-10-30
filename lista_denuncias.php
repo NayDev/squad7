@@ -11,13 +11,6 @@
     if(!$conn){
         die("A conexão ao Banco falhou: " .mysqli_connect_error());
     }
-    $conn = mysqli_connect("localhost", "root", "", "sosmedicamentos");
-
-    // Execução da instrução SQL
-   
-    $resultado_consulta = $conn->query("SELECT md.*,me.* from medicamento_denunciado as md, medicamento as me  WHERE (md.medicamento_id=me.id)");
-    
-    $medicamentos = mysqli_fetch_all($resultado_consulta);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,7 +45,7 @@
       <a class="nav-link text-white" href="lista_denuncias.php">Denuncias Recentes</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active text-white" href="cadastrar_denuncias.html">Denunciar</a>
+      <a class="nav-link active text-white" href="cadastrar_denuncias.php">Denunciar</a>
     </li>
     <li class="nav-item">
       <a class="nav-link active text-white" href="fale_conosco_sobre.php">Fale Conosco</a>
@@ -65,6 +58,7 @@
       
       <div class="container">
           <h3 class="mt-5">Denuncias recentes:</h3>
+          
           <table class="table table-striped">
             <tr>
                 <th scope="col">Data</th>
@@ -72,14 +66,36 @@
                 <th scope="col">MEDICAMENTO</th>
             </tr>
             <tr>
-                <td>25/10/2020</td>
-                <td>Santa Maria</td>
-                <td>Dipirona</td>
+            <?php
+        
+        $sql = "SELECT * FROM medicamento_denunciado INNER JOIN ubs ON medicamento_denunciado.ubs_id = ubs.id INNER JOIN medicamento ON medicamento_denunciado.medicamento_id = medicamento.id; " ;
+        $result = $conn->query($sql);
+
+      if($result->num_rows > 0){
+          while($rows = $result->fetch_assoc()){
+            ?>
+                <td><?php echo date('d/m/Y', strtotime($rows['data_denuncia']));?></td>
+                <td><?php echo $rows['nome'];?></td>
+                <td><?php echo $rows['nome'];?></td>
             </tr>
+            <?php
+            
+       }
+       }else{
+           echo "Nenhuma denuncia feita ainda!!!";
+       }
+       
+        ?>
+         
+    <script>
+      if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
+    </script>     
           </table>
         </div>
     </main>
-    <footer id="rodape">
+    <footer class="text-center">
       <p>&copy; Squad 007 Recode Pro 2020</p>
   </footer>
 </body>

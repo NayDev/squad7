@@ -1,3 +1,29 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "sosmedicamentos";
+
+    //Criando conexão
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    // Verificando conexão
+    if(!$conn){
+        die("A conexão ao Banco falhou: " .mysqli_connect_error());
+    }
+
+    if(isset($_POST['ubs_id']) && isset($_POST['comentario'])){
+        $nome = $_POST['ubs_id'];
+        $msg = $_POST['comentario'];
+
+        $sql = "insert  into denuncia (ubs_id, comentario) values ('$ubs_id','$comentario')";
+        $result = $conn->query($sql);
+    }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -39,7 +65,7 @@
           <a class="nav-link text-white" href="lista_denuncias.php">Denuncias Recentes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-white" href="cadastrar_denuncias.html">Denunciar</a>
+          <a class="nav-link active text-white" href="cadastrar_denuncias.php">Denunciar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active text-white" href="fale_conosco_sobre.php">Fale Conosco</a>
@@ -49,18 +75,39 @@
   </nav>
 
   <div>
-    <form class="container">
+    <form class="container" method="post">
       <div class="form-group">
         <h1 class="mt-5">Cadastrar Denuncia</h1>
         <label for="ubs">Escolha a UBS</label>
-        <select name="ubs" class="form-control mb-3" placeholder="Escolha a UBS">
-          <!-- exemplo -->
-          <option value="valor1">Valor 1</option>
-          <option value="valor2">Valor 2</option>
-          <option value="valor3">Valor 3</option>
+        <select name="ubs" class="form-control mb-3" >
+        <?php 
+        $sql = "SELECT nome FROM ubs " ;
+        $result = $conn->query($sql);
+        if($result->num_rows > 0){
+          while($rows = $result->fetch_assoc()){
+            ?>
+          
+          <option placeholder="Escolha a UBS"><?php echo $rows['nome']; ?></option>
+        
+           <?php
+          }
+        }?>
         </select>
+     
         <label for="">Medicamentos em falta</label>
-        <input type="text" class="form-control mb-3" name="med" placeholder="Escolha o medicamento">
+      
+        <select name="med" class="form-control mb-3" placeholder="Escolha o medicamento">
+        <?php 
+        $sql = "SELECT nome FROM medicamento " ;
+        $result = $conn->query($sql);
+        if($result->num_rows > 0){
+          while($rows = $result->fetch_assoc()){
+            ?>
+          <option placeholder="Escolha o medicamento"><?php echo $rows['nome']; ?></option>
+           <?php
+          }
+        }?>
+        </select>
         <label for="data">Data de quando faltou o remedio: </label>
         <input type="checkbox" name="data"> Hoje
         <input type="date" class="form-control data mb-3">
