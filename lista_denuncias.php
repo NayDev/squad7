@@ -25,36 +25,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Denuncias</title>
-  <link rel="stylesheet" href="lista_denuncias.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav class="menu">
-    <a href="home.html">Home</a>
-    <a href="lista_denuncias.php">Denuncias Recentes</a>
-    <a href="cadastrar_denuncias.html">Denunciar</a>
-    <a href="fale_conosco_sobre.php">Fale Conosco</a>
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+
+<a class="navbar-brand" href="home.html">Home</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavbar">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="collapseNavbar">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link text-white" href="lista_denuncias.php">Denuncias Recentes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active text-white" href="cadastrar_denuncias.html">Denunciar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active text-white" href="fale_conosco_sobre.php">Fale Conosco</a>
+    </li>
+  </ul>
+</div>
+</nav>
 
     <main>
       
       <div class="container">
-        
-        <div class="box">
-          <h3>Denuncias recentes:</h3>
-          <table class="lista">
+          <h3 class="mt-5">Denuncias recentes:</h3>
+          <table class="table table-striped">
             <tr>
-                <th>Data</th>
-                <th>UBS</th>
-                <th>MEDICAMENTO</th>
+                <th scope="col">Data</th>
+                <th scope="col">UBS</th>
+                <th scope="col">MEDICAMENTO</th>
             </tr>
             <tr>
                 <td>25/10/2020</td>
                 <td>Santa Maria</td>
-                <td><?php echo ['nome'] ?></td>
+                <td>Dipirona</td>
             </tr>
           </table>
         </div>
-      </div>
     </main>
     <footer id="rodape">
       <p>&copy; Squad 007 Recode Pro 2020</p>
