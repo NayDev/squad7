@@ -1,3 +1,24 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "sosmedicamentos";
+
+    //Criando conexão
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    // Verificando conexão
+    if(!$conn){
+        die("A conexão ao Banco falhou: " .mysqli_connect_error());
+    }
+    $conn = mysqli_connect("localhost", "root", "", "sosmedicamentos");
+
+    // Execução da instrução SQL
+   
+    $resultado_consulta = $conn->query("SELECT md.*,me.* from medicamento_denunciado as md, medicamento as me  WHERE (md.medicamento_id=me.id)");
+    
+    $medicamentos = mysqli_fetch_all($resultado_consulta);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,9 +30,9 @@
 <body>
   <nav class="menu">
     <a href="home.html">Home</a>
-    <a href="lista_denuncias.html">Denuncias Recentes</a>
+    <a href="lista_denuncias.php">Denuncias Recentes</a>
     <a href="cadastrar_denuncias.html">Denunciar</a>
-    <a href="fale_conosco_sobre.html">Fale Conosco</a>
+    <a href="fale_conosco_sobre.php">Fale Conosco</a>
   </nav>
 
     <main>
@@ -29,12 +50,7 @@
             <tr>
                 <td>25/10/2020</td>
                 <td>Santa Maria</td>
-                <td>Dipirona</td>
-            </tr>
-            <tr>
-                <td>26/10/2020</td>
-                <td>São Miguel</td>
-                <td>Amoxicilina</td>
+                <td><?php echo ['nome'] ?></td>
             </tr>
           </table>
         </div>

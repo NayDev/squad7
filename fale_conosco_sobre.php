@@ -1,3 +1,27 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "sosmedicamentos";
+
+    //Criando conexão
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    // Verificando conexão
+    if(!$conn){
+        die("A conexão ao Banco falhou: " .mysqli_connect_error());
+    }
+
+    if(isset($_POST['nome']) && isset($_POST['msg'])){
+        $nome = $_POST['nome'];
+        $msg = $_POST['msg'];
+
+        $sql = "insert  into comentarios (nome, msg) values ('$nome','$msg')";
+        $result = $conn->query($sql);
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
