@@ -51,28 +51,9 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-
-    <a class="navbar-brand" href="home.html">Home</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="collapseNavbar">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="lista_denuncias.php">Denuncias Recentes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active text-white" href="cadastrar_denuncias.php">Denunciar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active text-white" href="fale_conosco_sobre.php">Fale Conosco</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <?php
+    include('menu.html')
+  ?>
 
   <div>
     <form class="container" method="post">
