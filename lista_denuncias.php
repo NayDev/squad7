@@ -49,7 +49,7 @@
             <tr>
             <?php
         
-        $sql = "SELECT * FROM medicamento_denunciado INNER JOIN ubs ON medicamento_denunciado.ubs_id = ubs.id INNER JOIN medicamento ON medicamento_denunciado.medicamento_id = medicamento.id; " ;
+        $sql = "SELECT * FROM denuncia INNER JOIN ubs ON denuncia.ubs_id = ubs.id INNER JOIN medicamento ON denuncia.medicamento_id = medicamento.id; " ;
         $result = $conn->query($sql);
 
       if($result->num_rows > 0){
