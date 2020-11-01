@@ -1,0 +1,52 @@
+<?php
+    session_start();
+
+    // Se não existir um valor no índice 'nome', então encerre a aplicação
+    if (!isset($_SESSION['nome'])) {
+        header('Location: index.php');
+        exit;
+    }
+?>
+
+<nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+  
+    <div class="btn-group mx-2">
+      <button
+        class="btn btn-dark dropdown-toggle font-weight-bold d-flex align-items-center"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <img
+          src="<?php echo $_SESSION['imagem']?>"
+          width="30"
+          height="30"
+          class="d-inline-block align-top rounded-circle"
+          alt="<?php echo $_SESSION['nome'] ?>"
+          loading="lazy"
+        />
+        <span class="ml-2"><?php echo $_SESSION['username'] ?></span>
+      </button>
+  
+      <div class="dropdown-menu">
+        <a class="dropdown-item font-weight-bold" href="#">Meu perfil</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item font-weight-bold" href="./sair.php">Sair</a>
+      </div>
+    </div>
+  
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link btn btn-dark font-weight-bold mx-2 text-warning" href="pagubs.php">UBS's</a>
+        <a class="nav-link btn btn-dark font-weight-bold mx-2 text-success" href="pagmedicamentos.php">Medicamentos</a>
+        <a class="nav-link btn btn-dark font-weight-bold mx-2 text-danger" href="pagdenuncias.php">Denúncias</a>
+        <a class="nav-link btn btn-dark font-weight-bold mx-2 text-white" href="cadastro.php">Cadastrar novo ADM</a>
+      </div>
+    </div>
+</nav>
