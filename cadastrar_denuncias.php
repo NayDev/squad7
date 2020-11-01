@@ -69,7 +69,7 @@
     include('menu.html')
   ?>
 
-  <div>
+  <div class="container my-3 p-3 bg-light rounded shadow-lg">
     <form class="container" method="POST" action="cadastrar_denuncias.php">
       <div class="form-group">
         <h1 class="mt-5">Cadastrar Denuncia</h1>
