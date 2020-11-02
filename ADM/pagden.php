@@ -34,7 +34,7 @@
         $sql = "
           SELECT
           den.id id,
-          ubs.nome ubs,
+          ubs.nomeUbs ,
           med.nome med,
           den.data_ocorrencia data
           FROM
@@ -51,7 +51,7 @@
 
             <tr>
               <th class="align-middle text-left" scope="row "><?php echo $rows["id"]; ?></th>
-              <td class="align-middle text-left font-weight-bold"><?php echo $rows["ubs"]; ?></td>
+              <td class="align-middle text-left font-weight-bold"><?php echo $rows["nomeUbs"]; ?></td>
               <td class="align-middle text-left"><?php echo $rows["med"]; ?></td>
               <td class="align-middle text-left"><?php echo $rows["data"]; ?></td>
               <td class="align-middle text-right">
