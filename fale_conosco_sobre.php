@@ -105,8 +105,10 @@
         </script>     
     </div>
   </main>
-    <footer class="text-center">
-      <p>&copy; Squad 007 Recode Pro 2020</p>
-    </footer>
+  <footer class="footer mt-auto py-3 text-center">
+    <div class="container">
+      <span class="text-muted">&copy; Squad 007 Recode Pro 2020</span>
+    </div>
+  </footer>
 </body>
 </html>
