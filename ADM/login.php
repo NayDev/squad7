@@ -22,7 +22,7 @@
 
 
 
-        <input class="mb-3 form-control border border-warning" type="text" name="username" placeholder="Digite o seu e-mail">
+        <input class="mb-3 form-control border border-warning" type="text" name="username" placeholder="Digite o seu username">
         <input class="mb-3 form-control border border-warning" type="password" name="senha" placeholder="Digite a sua senha">
         <button class="btn btn-outline-warning btn-block" type="submit"><b>Entrar</b></button>
       </form>
