@@ -99,7 +99,30 @@ if (isset($_POST['submit'])) {
         <input type="date" name="data_denuncia" class="form-control data mb-3">
         <label for="comentario">Observações e comentarios: </label>
         <input type="textarea" name="comentario" class="form-control mb-3"><br>
-        <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalconfirma">Enviar</button>
+
+        <div class="container">
+          <div class="modal" id="modalconfirma" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Confirma</h4>
+                  <button type="button" class="closer" data-dismiss="modal">
+                    <span> &times; </span>
+                  </button>
+
+                </div>
+                <div class="modal-body">
+                  <p>Confirmar o envio da denuncia?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" name="submit" class="btn btn-success">Ok</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </form>
