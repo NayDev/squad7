@@ -12,7 +12,7 @@ if (!$conn) {
   die("A conexão ao Banco falhou: " . mysqli_connect_error());
 }
 
-
+// Condição para guardas os dados do formulario no Banco de Dados. E retornar alerta de success ou problema danger.
 if (isset($_POST['submit'])) {
 
   $ubs_id = $_POST['ubs_id'];
@@ -52,83 +52,97 @@ if (isset($_POST['submit'])) {
     .data {
       max-width: 300px;
     }
+    body {
+      color: #ff8b0d;
+      background: linear-gradient(223deg, rgba(189,21,141,0.7458333675266982) 0%, rgba(99,22,71,1) 95%);
+    }
   </style>
 </head>
 
 <body>
-  <!----------------------------- MENU --->
-  <?php include('menu.html') ?>
+  <header>
+    <!----------------------------- MENU --->
+    <?php include('menu.html') ?>
+  </header>
 
-  <div class="container my-3 p-3 bg-light rounded shadow-lg">
-    <form class="container" method="POST" action="cadastrar_denuncias.php">
-      <div class="form-group">
-        <h1 class="mt-5">Cadastrar Denuncia</h1>
-        <label for="ubs_id">Escolha a UBS</label>
-        <select name="ubs_id" class="form-control mb-3">
-          <option value="0">Escolha a UBS</option>
-          <?php
-          $sql = "SELECT id,nomeUbs FROM ubs ";
-          $result = $conn->query($sql);
-          if ($result->num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-          ?>
+  <main>
+    <!-------------------------------------- Formulario para cadastrar denuncia  ------------------------->
+    <div class="container my-3 p-3 bg-light rounded shadow-lg">
+      <form class="container" method="POST" action="cadastrar_denuncias.php">
+        <div class="form-group">
+          <h1 class="mt-5">Cadastrar Denuncia</h1>
+          <label for="ubs_id">Escolha a UBS</label>
+          <select name="ubs_id" class="form-control mb-3">
+            <option value="0">Escolha a UBS</option>
 
-              <option value="<?php echo $rows['id'] ?>"><?php echo $rows['nomeUbs']; ?></option>
+            <!-- PHP para selecionar os nomes das UBS's do banco de dados -->
+            <?php
+            $sql = "SELECT id,nomeUbs FROM ubs ";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+              while ($rows = $result->fetch_assoc()) {
+            ?>
 
-          <?php
-            }
-          } ?>
-        </select>
+                <option value="<?php echo $rows['id'] ?>"><?php echo $rows['nomeUbs']; ?></option>
 
-        <label for="medicamento_id">Medicamentos em falta</label>
+            <?php
+              }
+            } ?>
+          </select>
 
-        <select name="medicamento_id" class="form-control mb-3">
-          <option value="0">Escolha o medicamento</option>
-          <?php
-          $sql = "SELECT id,nome FROM medicamento ";
-          $result = $conn->query($sql);
-          if ($result->num_rows > 0) {
-            while ($rows = $result->fetch_assoc()) {
-          ?>
-              <option value="<?php echo $rows['id'] ?>"><?php echo $rows['nome']; ?></option>
-          <?php
-            }
-          } ?>
-        </select>
-        <label for="data_denuncia">Data de quando faltou o remedio: </label>
-        <input type="date" name="data_denuncia" class="form-control data mb-3">
-        <label for="comentario">Observações e comentarios: </label>
-        <input type="textarea" name="comentario" class="form-control mb-3"><br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalconfirma">Enviar</button>
+          <label for="medicamento_id">Medicamentos em falta</label>
 
-        <div class="container">
-          <div class="modal" id="modalconfirma" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">Confirma</h4>
-                  <button type="button" class="closer" data-dismiss="modal">
-                    <span> &times; </span>
-                  </button>
+          <select name="medicamento_id" class="form-control mb-3">
+            <option value="0">Escolha o medicamento</option>
 
-                </div>
-                <div class="modal-body">
-                  <p>Confirmar o envio da denuncia?</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" name="submit" class="btn btn-success">Ok</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <!-- PHP para selecionar os nomes dos medicamentos do banco de dados -->
+            <?php
+            $sql = "SELECT id,nome FROM medicamento ";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+              while ($rows = $result->fetch_assoc()) {
+            ?>
+                <option value="<?php echo $rows['id'] ?>"><?php echo $rows['nome']; ?></option>
+            <?php
+              }
+            } ?>
+          </select>
+          <label for="data_denuncia">Data de quando faltou o remedio: </label>
+          <input type="date" name="data_denuncia" class="form-control data mb-3">
+          <label for="comentario">Observações e comentarios: </label>
+          <textarea class="form-control mb-3" name="comentario" placeholder="Digite um comentario"></textarea><br>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalconfirma">Enviar</button>
+
+          <!-------------------------------------- Modal de confirmação para cadastrar denuncia ------------------->
+          <div class="container">
+            <div class="modal" id="modalconfirma" tabindex="-1" role="dialog">
+              <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Confirma</h4>
+                    <button type="button" class="closer" data-dismiss="modal">
+                      <span> &times; </span>
+                    </button>
+
+                  </div>
+                  <div class="modal-body">
+                    <p>Confirmar o envio da denuncia?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" name="submit" class="btn btn-success">Ok</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-    </form>
-  </div>
-
-  <?php include('rodape.html') ?>
+      </form>
+    </div>
+    <!------------------------------- Rodape -->
+    <?php include('rodape.html') ?>
+  </main>
 </body>
 
 </html>

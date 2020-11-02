@@ -39,8 +39,9 @@ $proximo = $pag + 1;
   <title>Lista de Denuncias</title>
   <?php include('./ADM/bootstrap.html') ?>
   <style>
-    .bglaranja {
-      background-color: #ff8b0d;
+    body {
+      color: #ff8b0d;
+      background: linear-gradient(223deg, rgba(189,21,141,0.7458333675266982) 0%, rgba(99,22,71,1) 95%);
     }
   </style>
 
