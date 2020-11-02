@@ -33,28 +33,23 @@
       <tbody>
 
 
-
+   
         <?php
-        $sql = "
-                SELECT
-                ubs.*,
-                count(den.ubs_id) qtde
-                FROM
-                ubs
-                LEFT JOIN denuncia den ON ubs.id = den.ubs_id GROUP BY den.ubs_id
-                ORDER BY ubs.id DESC;
-        ";
+      
+        $sql = "SELECT ubs.*, count(den.ubs_id) qtde FROM ubs LEFT JOIN denuncia den ON ubs.id = den.ubs_id GROUP BY ubs.id ORDER BY ubs.id DESC;";
+        
         $result = $conn->query($sql);
-
+       
         if ($result->num_rows > 0) {
           while ($rows = $result->fetch_assoc()) {
+            
         ?>
 
             <tr>
               <th class="align-middle text-left" scope="row "><?php echo $rows["id"]; ?></th>
               <td class="align-middle text-left">
                 <details>
-                  <summary class="font-weight-bold"><?php echo $rows["nome"]; ?></summary>
+                  <summary class="font-weight-bold"><?php echo $rows["nomeUbs"]; ?></summary>
                   <section>
                     <hr class="border border-white bg-white m-0 p-0">
 
@@ -89,14 +84,16 @@
                   <button class="btn btn-outline-warning  font-weight-bold">
                     EDITAR
                   </button>
-                  <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows["id"]; ?>','<?php echo $rows["nome"]; ?>')">
+                  <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows['id']; ?>','<?php echo $rows['nome']; ?>')">
                     APAGAR
                   </button>
                 </div>
               </td>
+              
             </tr>
 
         <?php
+        
           }
         } else {
           echo "Nenhuma UBS cadastrada!";
