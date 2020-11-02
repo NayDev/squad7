@@ -18,7 +18,7 @@ if (strlen($nome) > 3 && strlen($email) > 3 && strlen($senha) > 3 && $senha == $
 
     echo "<script>
             alert('Cadastro efetuado!')
-            window.location.href = 'pagubs.php'
+            window.location.href = 'cadastro.php'
         </script>
         ";
 } else if ($senha != $conf_senha) {
