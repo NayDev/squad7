@@ -38,6 +38,11 @@ $proximo = $pag + 1;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Denuncias</title>
   <?php include('./ADM/bootstrap.html') ?>
+  <style>
+    .bglaranja {
+      background-color: #ff8b0d;
+    }
+  </style>
 
 </head>
 
@@ -82,6 +87,7 @@ $proximo = $pag + 1;
         </script>
 
       </table>
+
       <nav class="d-flex justify-content-center" aria-label="Page navigation">
         <ul class="pagination">
           <?php
@@ -107,7 +113,8 @@ $proximo = $pag + 1;
       </nav>
     </div>
   </main>
-  <?php include('rodape.html') ?>
-</body>
 
+  <?php include('rodape.html') ?>
+
+</body>
 </html>
