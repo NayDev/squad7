@@ -5,17 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - SOS Medicamentos</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&display=swap" rel="stylesheet">
   <?php include('./ADM/bootstrap.html') ?>
 
 
   <style>
+    *{
+      font-family: 'Bree Serif', serif;
+    }
+    h1,h2,h3,h4,h5,h6{
+      font-family: 'Bebas Neue', cursive; /*Titulo*/
+    }
     main {
       background-color: #631647;
     }
     .jumbotron {
-      color: #ff8b0d;
-      background: linear-gradient(223deg, rgba(189,21,141,0.7458333675266982) 0%, rgba(99,22,71,1) 95%);
+      color: #ff8b0d; 
+      background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
     }
   </style>
 
