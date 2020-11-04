@@ -3,7 +3,7 @@
 <h1 align="center">
 
 
-# 🚧 SOS medicamentos em construção... 🚧
+# 🚧 SOS medicamentos em construção
 
 💻 Um pouco sobre o projeto
 
