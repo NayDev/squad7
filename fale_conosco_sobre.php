@@ -36,7 +36,7 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
   <style>
     body {
       color: #ff8b0d;
-      background: linear-gradient(223deg, rgba(189,21,141,0.7458333675266982) 0%, rgba(99,22,71,1) 95%);
+      background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
     }
   </style>
 
