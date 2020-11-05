@@ -49,7 +49,7 @@
 <body>
 
   <header>
-    <!----------------------------- MENU --->
+    <!---------------------- MENU --->
     <?php include('menu.html') ?>
 
   </header>
