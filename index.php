@@ -39,7 +39,7 @@
     margin: 0 auto;
     }
     .slogan{
-      font-size: 56px;
+      font-size: 4rem;
     }
 
   </style>
@@ -56,13 +56,11 @@
 
   <main>
 
-
-
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-6">
-            <h1 class="slogan"><span>DENUNCIE</span> A FALTA DE MEDICAMENTOS!</h1>
+            <h1 class="slogan"> <span> DENUNCIE </span> A FALTA DE MEDICAMENTOS!</h1>
           </div>
           <div class="col-6"><img class="rounded" width="80%" src="./img/pesq.png" alt=""></div>
         </div>
