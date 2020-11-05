@@ -33,30 +33,23 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
 
   <?php include('./ADM/bootstrap.html') ?>
 
-  <style>
-    body {
-      color: #ff8b0d;
-      background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
-    }
-  </style>
-
 </head>
 
 <body>
   <!--------------------- MENU ---------------------------->
   <?php include('menu.html') ?>
 
-  <main>
+  <main style="height: 37vw;">
 
     <div class="container">
       <!------------------------------ Formulario de msg --------------------------->
       <form class="form-group" method="post" action="">
         <h4 class="mt-5">Nome </h4>
-        <input class="form-control mb-3" type="text" name="nome" placeholder="Digite seu Nome">
+        <input class="form-control mb-2" type="text" name="nome" placeholder="Digite seu Nome">
         <h4 class="mt-5">Mensagem </h4>
-        <textarea class="form-control mb-3" name="msg" placeholder="Digite uma mensagem"></textarea>
+        <textarea class="form-control mb-2" name="msg" placeholder="Digite uma mensagem"></textarea>
         <br /><br />
-        <input class="btn btn-primary form-control mb-3" id="button" type="submit" name="submit" value="Enviar">
+        <input class="btn btn-primary form-control" id="button" type="submit" name="submit" value="Enviar">
       </form>
 
       <!--- Função para evitar o reenvio da msg ao atualizar a pagina -->
