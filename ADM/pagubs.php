@@ -7,42 +7,49 @@
   <title>ADM SOS - UBS's</title>
 </head>
 
-<body style="background-color: black;" class="text-white">
+<body style="background: rgb(18,18,20);
+background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);" class="text-white">
 
   <?php include_once('menu.html') ?>
 
 
-  <main class="jumbotron card card-image text-white" style="background-color: black;">
+  <main class="jumbotron card card-image text-white" style="background-color: rgba(0,0,0,0);">
     <p class="text-center">Bem vindo ao sistema SOS, <b><?php echo $_SESSION['nome'] ?></b>! - (<?php echo $_SESSION['email'] ?>)</p>
     <h1 class="display-4 text-warning  font-weight-bold">UBS's</h1>
+
     <button type="button" class="btn btn-warning btn-lg font-weight-bold" data-toggle="modal" data-target="#cadastroUBSModal">
       CADASTRAR NOVA UBS
     </button>
+
     <hr class="my-4 bg-white">
     <p class="lead font-weight-bold">Atualmente cadastradas:</p>
 
     <table class="table table-striped table-hover table-dark bg-dark text-center">
       <thead>
         <tr>
-          <th scope="col" class=" text-left">ID-UBS</th>
-          <th scope="col" class=" text-left">NOME</th>
-          <th scope="col" class=" text-left">DISTRITO</th>
-          <th scope="col" class=" text-left">N° DENÚNCIAS</th>
+          <th scope="col" class="text-left" onclick="ordenarID()">ID</th>
+          <th scope="col" class="text-left">NOME</th>
+          <th scope="col" class="text-left">DISTRITO / ZONA</th>
+          <th scope="col" class="text-center" onclick="ordenarQtde()">N°_DENÚNCIAS</th>
         </tr>
       </thead>
       <tbody>
 
 
-   
+
         <?php
-      
-        $sql = "SELECT ubs.*, count(den.ubs_id) qtde FROM ubs LEFT JOIN denuncia den ON ubs.id = den.ubs_id GROUP BY ubs.id ORDER BY ubs.id DESC;";
-        
+        $sql = "
+                SELECT ubs.*,  count(den.ubs_id) qtde
+                FROM  ubs
+                LEFT JOIN denuncia den 
+                ON ubs.id = den.ubs_id 
+                GROUP BY ubs.id
+                ORDER BY ubs.id DESC;
+        ";
         $result = $conn->query($sql);
-       
+
         if ($result->num_rows > 0) {
           while ($rows = $result->fetch_assoc()) {
-            
         ?>
 
             <tr>
@@ -51,49 +58,60 @@
                 <details>
                   <summary class="font-weight-bold"><?php echo $rows["nomeUbs"]; ?></summary>
                   <section>
-                    <hr class="border border-white bg-white m-0 p-0">
+                    <hr class="border border-white bg-white mx-0 my-2 p-0">
 
                     <div>
-                      <b>Endereço: </b><br>
-                      <?php echo $rows["endereco"]; ?>
+                      <b class="text-warning">Endereço: </b>
+                      <?php echo $rows["endereco"]; ?>, <?php echo $rows["bairro"]; ?>
                     </div>
 
                     <div>
-                      <b>CEP: </b>
+                      <b class="text-warning">CEP: </b>
                       <?php echo $rows["cep"]; ?>
                     </div>
 
                     <div>
-                      <b>Telefone: </b>
+                      <b class="text-warning">Telefone: </b>
                       <?php echo $rows["telefone"]; ?>
                     </div>
 
+                    <div>
+                      <b class="text-warning">Coordenada: </b>
+                      <?php echo $rows["latitude"]; ?>, <?php echo $rows["longitude"]; ?>
+                    </div>
 
-                    <hr class="border border-white bg-white m-0 p-0">
+                    <hr class="border border-white bg-white mx-0 my-2 p-0">
+
+                    <div>
+                      <b class="text-warning">Cadastrado por: </b>
+                      <?php echo $rows["cadastrado_por_id"]; ?>
+                    </div>
+
+                    <div>
+                      <b class="text-warning">Cadastrado em: </b>
+                      <?php echo date('d/m/Y', strtotime($rows['data_cadastro'])); ?>
+                    </div>
+
+                    <hr class="border border-white bg-white mx-0 my-2 p-0">
 
                   </section>
                 </details>
               </td>
-              <td class="align-middle text-left"><?php echo $rows["distrito"]; ?></td>
+              <td class="align-middle text-left">
+                <?php echo $rows["distrito"]; ?> / <?php echo $rows["zona"]; ?>
+              </td>
               <td class="align-middle text-center"><?php echo $rows["qtde"]; ?></td>
               <td class="align-middle text-right">
                 <div class="btn-group">
-                  <button class="btn btn-outline-warning  font-weight-bold">
-                    VER
-                  </button>
-                  <button class="btn btn-outline-warning  font-weight-bold">
-                    EDITAR
-                  </button>
-                  <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows['id']; ?>','<?php echo $rows['nome']; ?>')">
-                    APAGAR
-                  </button>
+
+                  <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows["id"]; ?>','<?php echo $rows["nomeUbs"]; ?>')"> VER </button>
+                  <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows["id"]; ?>','<?php echo $rows["nomeUbs"]; ?>')"> EDITAR </button>
+                  <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows["id"]; ?>','<?php echo $rows["nomeUbs"]; ?>')"> APAGAR </button>
                 </div>
               </td>
-              
             </tr>
 
         <?php
-        
           }
         } else {
           echo "Nenhuma UBS cadastrada!";
@@ -149,12 +167,21 @@
               <input type="text" name="endereco" class="form-control border border-primary" placeholder="Endereço" />
             </div>
 
+            <div class="row">
+              <div class="form-group col-lg-8">
+                <input type="text" name="bairro" class="form-control border border-primary" placeholder="Bairro" />
+              </div>
+            </div>
+
+
 
             <div class="row">
               <div class="col-lg-8 mr-auto form-group">
                 <select class="custom-select mr-sm-2 border border-primary" name="distrito">
                   <option selected>Escolha o distrito</option>
-                  <option value="SÃO MIGUEL PAULISTA">SÃO MIGUEL PAULISTA</option>
+                  <option value="SÃO MIGUEL">SÃO MIGUEL</option>
+                  <option value="VILA JACUÍ">VILA JACUÍ</option>
+                  <option value="JARDIM HELENA">JARDIM HELENA</option>
                 </select>
               </div>
 
@@ -201,6 +228,16 @@
               </div>
             </div>
 
+            <div class="row">
+              <div class="col-7 col-md-6 mr-auto form-group">
+                <input type="text" name="latitude" class="form-control border border-primary" placeholder="Latitude (opcional)" />
+              </div>
+
+              <div class="col-7 col-md-6 form-group">
+                <input type="text" name="longitude" class="form-control border border-primary" placeholder="Longitude (opcional)" />
+              </div>
+            </div>
+
           </form>
 
         </div>
@@ -209,7 +246,7 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">SAIR</button>
 
           <div class="d-flex">
-            <input type="reset" class="btn btn-primary mx-2" form="cadastrarUBS" value="LIMPAR">
+            <input type="reset" class="btn btn-outline-warning mx-2" form="cadastrarUBS" value="LIMPAR">
             <input type="submit" class="btn btn-primary mx-2" form="cadastrarUBS" value="CADASTRAR">
           </div>
         </div>
@@ -223,7 +260,7 @@
   <script>
     function showInfo(id, nome) {
       displayAlerts.innerHTML += `
-      <div class="alert alert-danger alert-dismissible m-4" role="alert">
+      <div class="alert alert-warning alert-dismissible fade show m-4" role="alert">
       <button class="close" data-dismiss="alert">&times;</button>
       <h4 class="alert-heading">Botao clicado com sucesso!</h4>
       <p>Este botao pertence a UBS ${id} - "${nome}".</p>
