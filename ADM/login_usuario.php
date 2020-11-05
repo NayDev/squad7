@@ -2,11 +2,11 @@
 
 session_start();
 
-$username = $_POST['username'];
+$username = strtoupper($_POST['username']);
 $senha = $_POST['senha'];
 
 if (strlen($username) > 3 && strlen($senha) > 3) {
-    $senha_cripto = $senha;
+    $senha_cripto = md5($senha);
 
     $conn = mysqli_connect("localhost", "root", "", "sosmedicamentos");
 

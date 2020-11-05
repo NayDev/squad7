@@ -1,15 +1,15 @@
 <?php
 
-$nome = $_POST['nome'];
-$username = $_POST['username'];
+$nome = strtoupper($_POST['nome']);
+$username = strtoupper($_POST['username']);
 $imagem = $_POST['imagem'];
-$email = $_POST['email'];
+$email = strtoupper($_POST['email']);
 $senha = $_POST['senha'];
 $conf_senha = $_POST['conf_senha'];
 
 
 if (strlen($nome) > 3 && strlen($email) > 3 && strlen($senha) > 3 && $senha == $conf_senha) {
-    $senha_cripto = $senha;
+    $senha_cripto = md5($senha);
 
     $conn = mysqli_connect("localhost", "root", "", "sosmedicamentos");
 
