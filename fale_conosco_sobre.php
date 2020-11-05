@@ -43,7 +43,7 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
 </head>
 
 <body>
-  <!--------------------- MENU -------------------------------->
+  <!--------------------- MENU ---------------------------->
   <?php include('menu.html') ?>
 
   <main>
@@ -69,7 +69,7 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
     </section>
 
     <div class="container">
-      <!------------------------------ Formulario de msg ----------------------------->
+      <!------------------------------ Formulario de msg --------------------------->
       <form class="form-group" method="post" action="">
         <h4 class="mt-5">Nome </h4>
         <input class="form-control mb-3" type="text" name="nome" placeholder="Digite seu Nome">
