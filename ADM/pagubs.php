@@ -179,7 +179,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
               <div class="col-lg-8 mr-auto form-group">
                 <select class="custom-select mr-sm-2 border border-primary" name="distrito">
                   <option selected>Escolha o distrito</option>
-                  <option value="SÃO MIGUEL">SÃO MIGUEL PAULISTA</option>
+                  <option value="SÃO MIGUEL PAULISTA">SÃO MIGUEL PAULISTA</option>
                   <option value="VILA JACUÍ">VILA JACUÍ</option>
                   <option value="JARDIM HELENA">JARDIM HELENA</option>
                 </select>
