@@ -60,7 +60,7 @@
 
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center align-items-center">
           <div class="col-6">
             <h1 class="slogan"><span>DENUNCIE</span> A FALTA DE MEDICAMENTOS!</h1>
           </div>
@@ -74,8 +74,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              <img class="bd-placeholder-img card-img-top" width="100%" src="https://c.files.bbci.co.uk/1E5C/production/_107427770_hi053578994.jpg" alt="">
+            <div class="card mb-4 shadow-sm d-flex justify-content-center">
+              <img class="bd-placeholder-img card-img-top mx-auto mt-3" width="100%" src="https://c.files.bbci.co.uk/1E5C/production/_107427770_hi053578994.jpg" alt="">
               <div class="card-body">
                 <p class="card-text text-white text-justify">Acesse a ultimas denúncias. O acesso à informação junto com o direito à saúde, são uns dos direitos fundamentais.</p>
                 <div class="d-flex justify-content-center align-items-center">
@@ -89,7 +89,7 @@
 
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-              <img class="bd-placeholder-img card-img-top" width="100%" src="https://c.files.bbci.co.uk/1E5C/production/_107427770_hi053578994.jpg" alt="">
+              <img class="bd-placeholder-img card-img-top mx-auto mt-3" width="100%" src="https://c.files.bbci.co.uk/1E5C/production/_107427770_hi053578994.jpg" alt="">
               <div class="card-body">
                 <p class="card-text text-white text-justify">Faça uma reclamação da falta de algum dos medicamento que deveria ser fornecido pelo Sistema Único de Saúde</p>
                 <div class="d-flex justify-content-center align-items-center">
@@ -103,7 +103,7 @@
 
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-              <img class="bd-placeholder-img card-img-top img-responsive" src="./img/sos_med.svg" alt="Logo">
+              <img class="bd-placeholder-img card-img-top img-responsive mx-auto mt-3" src="./img/sos_med.svg" alt="Logo">
               <div class="card-body">
                 <p class="card-text text-white text-justify p-1">Projeto desenvolvido no ano de 2020 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.</p>
                 <div class="d-flex justify-content-center align-items-center">
