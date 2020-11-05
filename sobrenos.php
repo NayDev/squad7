@@ -19,7 +19,7 @@
         <main class="flex-column">
             <section class="container" style="height: 35vw; font-family: 'Roboto', sans-serif; font-size: 1.4rem">
                 <h2 class="mt-5">Visão</h2>
-                <p class="text-white">Ser o melhor portal de denuncias para a população vulnerável que utiliza o SUS.
+                <p class="text-white">Prestar com excelência o serviço de denuncia de falta de medicamentos, para que as dores da cidadania seja ouvida e minimizada. 
                 </p>
                 <h2 class="mt-5">Missão</h2>
                 <p class="text-white">Oferecer um meio de denuncia para população em vunerabilidade social que necessitam dos medicamentos disponibilizados pelo sistema unico de saúde.
