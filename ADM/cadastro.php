@@ -7,7 +7,8 @@
   <title>ADM SOS - Cadastro</title>
 </head>
 
-<body style="background-color: black; color:white;">
+<body style="background: rgb(18,18,20);
+background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);" class="text-white">
   <?php include_once('menu.html') ?>
 
 
@@ -17,8 +18,8 @@
 
 
       <div class="col">
-        <div class="jumbotron card card-image text-white" style="background-color: black;">
-          <h1 class="display-4 text-primary  font-weight-bold">ADM's</h1>
+        <div class="jumbotron card card-image text-white" style="background-color: rgba(0,0,0,0);">
+          <h1 class="display-4 text-light  font-weight-bold">ADM's</h1>
           <p class="lead font-weight-bold">Atuais ADM's do sistema SOS</p>
 
           <table class="table table-striped table-hover table-dark bg-dark text-center">
@@ -54,14 +55,8 @@
 
                           <div>
                             <b>Membro desde: </b>
-                            <?php
-                            $datestr = strval($rows["adm_desde"]);
-                            echo substr($datestr, 5, 2);
-                            echo "/";
-                            echo substr($datestr, 0, 4);
-                            ?>
+                            <?php echo date('m/Y', strtotime($rows['adm_desde'])); ?>
                           </div>
-
 
                         </section>
                       </details>
@@ -82,19 +77,21 @@
       </div>
 
       <div class="col">
-        <div class="jumbotron card card-image text-white" style="background-color: black;">
-          <h1 class="display-4 text-primary  font-weight-bold">CADASTRAR</h1>
+        <div class="jumbotron card card-image text-white" style="background-color: rgba(0,0,0,0);">
+          <h1 class="display-4 text-light  font-weight-bold">CADASTRAR</h1>
           <p class="lead font-weight-bold">Insira abaixo dados do novo ADM</p>
 
           <form action="cadastro_usuario.php" method="post" class="d-flex flex-column justify-content-center align-items-center ">
-            <input class="mb-3 form-control border border-primary" type="text" name="nome" placeholder="Digite o nome">
-            <input class="mb-3 form-control border border-primary" type="text" name="username" placeholder="Digite um nome de usuário">
-            <input class="mb-3 form-control border border-primary" type="email" name="email" placeholder="Digite o e-mail">
-            <input class="mb-3 form-control border border-primary" type="url" name="imagem" placeholder="URL do avatar (opcional)">
-            <input class="mb-3 form-control border border-primary" type="password" name="senha" placeholder="Digite uma senha">
-            <input class="mb-3 form-control border border-primary" type="password" name="conf_senha" placeholder="Confirme a senha">
-            <button class="btn btn-primary btn-block" type="submit"><b>Cadastrar</b></button>
-            <button class="btn btn-outline-primary btn-block" type="reset"><b>Limpar</b></button>
+            <input class="mb-3 form-control border border-light" type="text" name="nome" placeholder="Digite o nome">
+            <input class="mb-3 form-control border border-light" type="text" name="username" placeholder="Digite um nome de usuário">
+            <input class="mb-3 form-control border border-light" type="email" name="email" placeholder="Digite o e-mail">
+            <input class="mb-3 form-control border border-light" type="url" name="imagem" placeholder="URL do avatar (opcional)">
+            <input class="mb-3 form-control border border-light" type="password" name="senha" placeholder="Digite uma senha">
+            <input class="mb-3 form-control border border-light" type="password" name="conf_senha" placeholder="Confirme a senha">
+            <div class="d-flex justify-content-between btn-block">
+              <button class="btn btn-outline-light w-25" type="reset"><b>Limpar</b></button>
+              <button class="btn btn-light w-25" type="submit"><b>Cadastrar</b></button>
+            </div>
           </form>
         </div>
       </div>
