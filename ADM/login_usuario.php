@@ -27,14 +27,14 @@ if (strlen($username) > 3 && strlen($senha) > 3) {
     echo "
     <script>
         alert('Favor preencher ambos campos!')
-        location.href = 'login.php'
+        location.href = 'index.php'
     </script>
 ";
 } else {
     echo "
         <script>
             alert('E-mail ou senha inválidos!')
-            location.href = 'login.php'
+            location.href = 'index.php'
         </script>
     ";
 }
