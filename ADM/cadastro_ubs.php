@@ -31,7 +31,7 @@ if (strlen($nome) > 3 && strlen($endereco) > 3 && strlen($distrito) > 3) {
 } else {
   echo "<script>
 alert('Dados invalidos!')
-window.location.href = 'pagubs.php'
+window.location.href = 'index.php'
 </script>
 ";
 }
