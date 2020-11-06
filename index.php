@@ -65,7 +65,7 @@
           <div class="col-6">
             <h1 class="slogan"> <span> DENUNCIE </span> A FALTA DE MEDICAMENTOS!</h1>
           </div>
-          <div class="col-6"><img class="rounded float-right" width="90%" src="./img/med2.png" alt=""></div>
+          <div class="col-6"><img class="rounded float-right" width="0%" src="./img/med.png" alt=""></div>
         </div>
       </div>
     </div>
