@@ -108,9 +108,10 @@ $proximo = $pag + 1;
         </ul>
       </nav>
     </div>
+    <?php include('rodape.html') ?>
   </main>
 
-  <?php include('rodape.html') ?>
+  
 
 </body>
 </html>

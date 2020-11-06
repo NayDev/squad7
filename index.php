@@ -46,6 +46,14 @@
       color: #6d078e;
     }
 
+    @media(max-width: 1024px){
+      .rounded  {
+      display: none;
+    }
+  
+   
+}
+
   </style>
 
 </head>
@@ -64,7 +72,7 @@
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-6">
-            <h1 class="slogan"> <span> DENUNCIE </span> A FALTA DE MEDICAMENTOS!</h1>
+            <h1 class="row slogan text-center"> <span> DENUNCIE </span> A FALTA DE MEDICAMENTOS!</h1>
           </div>
           <div class="col-6"><img class="rounded float-right" width="" src="./img/med.png" alt=""></div>
         </div>
@@ -122,6 +130,7 @@
     </section>
   </main>
 
+ 
   <?php include('rodape.html') ?>
 
 </body>
