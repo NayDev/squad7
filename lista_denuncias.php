@@ -14,7 +14,7 @@ if (!$conn) {
 
 $pag = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1; // Pega Via Get a Pag
 
-$busca = "SELECT * FROM denuncia INNER JOIN ubs ON denuncia.ubs_id = ubs.id INNER JOIN medicamento ON denuncia.medicamento_id = medicamento.id; ";
+$busca = "SELECT * FROM denuncia INNER JOIN ubs ON denuncia.ubs_id = ubs.id INNER JOIN medicamento ON denuncia.medicamento_id = medicamento.id GROUP BY denuncia.id DESC; ";
 $todos = mysqli_query($conn, "$busca");
 
 $registros = 5;
@@ -24,7 +24,7 @@ $tp = ceil($tr / $registros);
 
 $inicio = ($registros * $pag) - $registros; //Inicia os Reg * o numero da pag - a quantidade de Registros
 
-$buscaPaginada = "SELECT * FROM denuncia INNER JOIN ubs ON denuncia.ubs_id = ubs.id INNER JOIN medicamento ON denuncia.medicamento_id = medicamento.id LIMIT $inicio,$registros";
+$buscaPaginada = "SELECT * FROM denuncia INNER JOIN ubs ON denuncia.ubs_id = ubs.id INNER JOIN medicamento ON denuncia.medicamento_id = medicamento.id GROUP BY denuncia.id DESC LIMIT $inicio,$registros";
 $registrosPaginados = mysqli_query($conn, "$buscaPaginada");
 
 $anterior = $pag - 1;
