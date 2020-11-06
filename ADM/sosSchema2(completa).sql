@@ -59,7 +59,7 @@ VALUES
     'CD@ITAU.COM',
     'd1233c7274abadb3c7b6863bf51fbdfa',
     'CRAZY DOG',
-    'https://i.ytimg.com/vi/e-GwktHmR3s/hqdefault.jpg'
+    'https://pbs.twimg.com/profile_images/1257312140748181506/uitScpep_400x400.jpg'
   ),
   (
     'NLOPES',
