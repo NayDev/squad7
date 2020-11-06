@@ -30,6 +30,7 @@
 
     .btn{
       background-color: #6d078e;
+      background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
     }
     .card-img-top{
       width: 100px;
