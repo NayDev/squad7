@@ -52,10 +52,7 @@ if (isset($_POST['submit'])) {
     .data {
       max-width: 300px;
     }
-    body {
-      color: #ff8b0d;
-      background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
-    }
+    
   </style>
 </head>
 
@@ -70,7 +67,7 @@ if (isset($_POST['submit'])) {
     <div class="container my-3 p-3 bg-light rounded shadow-lg">
       <form class="container" method="POST" action="cadastrar_denuncias.php">
         <div class="form-group">
-          <h1 class="mt-5">Cadastrar Denuncia</h1>
+          <h1 class="my-4">Cadastrar Denuncia</h1>
           <label for="ubs_id">Escolha a UBS</label>
           <select name="ubs_id" class="form-control mb-3">
             <option value="0">Escolha a UBS</option>

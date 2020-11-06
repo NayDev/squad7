@@ -18,13 +18,13 @@
 
         <main class="flex-column">
             <section class="container" style="height: 37vw; font-family: 'Roboto', sans-serif; font-size: 1.4rem">
-                <h2 class="mt-5">Visão</h2>
+                <h2 class="mt-5 torange">Visão</h2>
                 <p class="text-white">Prestar com excelência o serviço de denuncia de falta de medicamentos, para que as dores da cidadania seja ouvida e minimizada. 
                 </p>
-                <h2 class="mt-5">Missão</h2>
+                <h2 class="mt-5 torange">Missão</h2>
                 <p class="text-white">Oferecer um meio de denuncia para população em vunerabilidade social que necessitam dos medicamentos disponibilizados pelo sistema unico de saúde.
                 </p>
-                <h2 class="mt-5">Valor</h2>
+                <h2 class="mt-5 torange">Valor</h2>
                 <p class="text-white">Despertar o controle social na população usuária do sistema unico de saúde, contribuir para a melhoria da disponibilidade de medicamentos.
                 </p>
             </section>

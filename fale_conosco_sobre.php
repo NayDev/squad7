@@ -44,9 +44,9 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
     <div class="container">
       <!------------------------------ Formulario de msg --------------------------->
       <form class="form-group" method="post" action="">
-        <h4 class="mt-5">Nome </h4>
+        <h4 class="mt-5 torange">Nome </h4>
         <input class="form-control mb-2" type="text" name="nome" placeholder="Digite seu Nome">
-        <h4 class="mt-5">Mensagem </h4>
+        <h4 class="mt-5 torange">Mensagem </h4>
         <textarea class="form-control mb-2" name="msg" placeholder="Digite uma mensagem"></textarea>
         <br /><br />
         <input class="btn btn-primary form-control" id="button" type="submit" name="submit" value="Enviar">
