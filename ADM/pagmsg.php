@@ -47,11 +47,11 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
                 <b class="text-primary"><?php echo $rows["nome"]; ?>:</b><br>
                 <?php echo $rows["msg"]; ?>
               </td>
-              <td class="align-middle text-right">
+              <!-- <td class="align-middle text-right">
                 <div class="btn-group">
                   <button class="btn btn-outline-primary font-weight-bold" onclick="showInfo()">APAGAR</button>
                 </div>
-              </td>
+              </td> -->
             </tr>
 
         <?php

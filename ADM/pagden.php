@@ -77,12 +77,12 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 
               </td>
               <td class="align-middle text-center"><?php echo date('d/m/Y', strtotime($rows['data'])); ?></td>
-              <td class="align-middle text-right">
+              <!-- <td class="align-middle text-right">
                 <div class="btn-group">
                   <button class="btn btn-outline-danger font-weight-bold" onclick="showInfo()">VER</button>
                   <button class="btn btn-outline-danger font-weight-bold" onclick="showInfo()">APAGAR</button>
                 </div>
-              </td>
+              </td> -->
             </tr>
 
         <?php

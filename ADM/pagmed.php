@@ -1,8 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-  <?php require_once('connectdb.html') ?>
+  <?php 
+    require_once('connectdb.html');
+
+    /*Aqui Faz a Paginação pega do banco de dados*/
+
+    $pag = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1; // Pega Via Get a Pag
+
+    $busca = "SELECT med.*,  count(den.medicamento_id) qtde FROM  medicamento med LEFT JOIN denuncia den ON med.id = den.medicamento_id GROUP BY med.id ORDER BY qtde DESC";
+    $todos = mysqli_query($conn, "$busca");
+    
+    $registros = 20;
+    
+    $tr = mysqli_num_rows($todos);
+    $tp = ceil($tr / $registros);
+    
+    $inicio = ($registros * $pag) - $registros; //Inicia os Reg * o numero da pag - a quantidade de Registros
+    
+    $buscaPaginada = "SELECT med.*,  count(den.medicamento_id) qtde FROM  medicamento med LEFT JOIN denuncia den ON med.id = den.medicamento_id GROUP BY med.id ORDER BY qtde DESC LIMIT $inicio,$registros";
+    $registrosPaginados = mysqli_query($conn, "$buscaPaginada");
+    
+    $anterior = $pag - 1;
+    $proximo = $pag + 1;  
+  ?>
   <?php require_once('bootstrap.html') ?>
   <title>ADM SOS - Medicamentos</title>
 </head>
@@ -32,25 +54,11 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
         </tr>
       </thead>
       <tbody>
-
-
-
-        <?php
-        $sql = "
-          SELECT med.*,  count(den.medicamento_id) qtde
-          FROM  medicamento med
-          LEFT JOIN denuncia den 
-          ON med.id = den.medicamento_id 
-          GROUP BY med.id
-          ORDER BY qtde DESC;
-        ";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-          while ($rows = $result->fetch_assoc()) {
-        ?>
-
             <tr>
+            <?php
+              if ($registrosPaginados->num_rows > 0) {
+                while ($rows = $registrosPaginados->fetch_assoc()) {
+              ?>
               <th class="align-middle text-left" scope="row "><?php echo $rows["id"]; ?></th>
               <td class="align-middle text-left">
 
@@ -80,9 +88,9 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
               <td class="align-middle text-right">
                 <div class="btn-group">
 
-                  <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">VER</button>
+                  <!-- <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">VER</button>
                   <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">EDITAR</button>
-                  <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">APAGAR</button>
+                  <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">APAGAR</button> -->
                 </div>
               </td>
             </tr>
@@ -98,12 +106,29 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
     </table>
 
 
-    <div class="btn-group pagination justify-content-center">
-      <a class="btn btn-outline-light disabled" href="#">ANTERIOR</a>
-      <a class="btn btn-outline-light active" href="#">1</a>
-      <a class="btn btn-outline-light" href="#">2</a>
-      <a class="btn btn-outline-light" href="#">3</a>
-      <a class="btn btn-outline-light" href="#">PRÓXIMO</a>
+    <nav class="d-flex justify-content-center" aria-label="Page navigation">
+        <ul class="pagination">
+          <?php
+          if ($pag > 1) {
+          ?>
+            <li class="page-item" ><a class="page-link" style="color: rgb(61, 3, 77); font-size: 20px;" href="?pagina=<?= $anterior; ?>">Anterior</a></li>
+          <?php } ?>
+          <?php
+          for ($i = 1; $i <= $tp; $i++) {
+            if ($pag == $i) {
+              echo "<li class='page-item active'><a class='page-link' style='background: rgb(61, 3, 77); font-size: 20px;' href='?pagina=$i'>$i</a></li>";
+            } else {
+              echo "<li class='page-item'><a class='page-link'  style='color: rgb(61, 3, 77); font-size: 20px;' href='?pagina=$i'>$i</a></li>";
+            }
+          }
+          ?>
+          <?php
+          if ($pag < $tp) {
+          ?>
+            <li class="page-item"><a class="page-link" style="color: rgb(61, 3, 77); font-size: 20px;" href="?pagina=<?= $proximo; ?>">Proximo</a></li>
+          <?php } ?>
+        </ul>
+      </nav>
     </div>
 
   </div>
