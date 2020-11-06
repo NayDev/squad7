@@ -16,12 +16,13 @@
     h1,h2,h3,h4,h5,h6,span{
       font-family: 'Bebas Neue', cursive; /*Titulo*/
     }
-    main {
+    /* main {
       background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
-    }
+    } */
     .jumbotron {
       color: #FFF; 
-      background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
+      /* background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%); */
+      background-color: #6d078e;
     }
     span {
       background-color: #ff7f00;
@@ -47,15 +48,25 @@
     }
 
     @media(max-width: 1024px){
-      .rounded  {
+      .imgnone  {
       display: none;
     }
-    span{
-      margin-left: 40%;
-    }
+
     .slogan{
       font-size: 60px;
-      margin-left: 10%;
+    }
+  
+   
+}
+@media(max-width: 600px){
+      .imgnone  {
+      display: none;
+    }
+
+    .slogan{
+      width: 100%;
+      font-size: 40px;
+      text-align: center;
     }
   
    
@@ -75,13 +86,13 @@
 
   <main>
 
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid text-sm-center">
       <div class="container">
         <div class="row justify-content-center align-items-center">
-          <div class="col-6">
-            <h1 class="row slogan text-center"> <span> DENUNCIE </span> A FALTA DE MEDICAMENTOS!</h1>
+          <div class="col">
+            <h1 class="slogan lead"> <span class="m-auto"> DENUNCIE </span><br> A FALTA DE MEDICAMENTOS!</h1>
           </div>
-          <div class="col-6"><img class="rounded float-right" width="" src="./img/med.png" alt=""></div>
+          <div class="col imgnone"><img class="rounded float-right" width="" src="./img/med.png" alt=""></div>
         </div>
       </div>
     </div>

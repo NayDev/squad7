@@ -89,21 +89,21 @@ $proximo = $pag + 1;
           <?php
           if ($pag > 1) {
           ?>
-            <li class="page-item"><a class="page-link" href="?pagina=<?= $anterior; ?>">Anterior</a></li>
+            <li class="page-item" ><a class="page-link" style="color: rgb(61, 3, 77); font-size: 20px;" href="?pagina=<?= $anterior; ?>">Anterior</a></li>
           <?php } ?>
           <?php
           for ($i = 1; $i <= $tp; $i++) {
             if ($pag == $i) {
-              echo "<li class='page-item active'><a class='page-link' href='?pagina=$i'>$i</a></li>";
+              echo "<li class='page-item active'><a class='page-link' style='background: rgb(61, 3, 77); font-size: 20px;' href='?pagina=$i'>$i</a></li>";
             } else {
-              echo "<li class='page-item'><a class='page-link' href='?pagina=$i'>$i</a></li>";
+              echo "<li class='page-item'><a class='page-link'  style='color: rgb(61, 3, 77); font-size: 20px;' href='?pagina=$i'>$i</a></li>";
             }
           }
           ?>
           <?php
           if ($pag < $tp) {
           ?>
-            <li class="page-item"><a class="page-link" href="?pagina=<?= $proximo; ?>">Proximo</a></li>
+            <li class="page-item"><a class="page-link" style="color: rgb(61, 3, 77); font-size: 20px;" href="?pagina=<?= $proximo; ?>">Proximo</a></li>
           <?php } ?>
         </ul>
       </nav>
