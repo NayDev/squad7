@@ -47,7 +47,7 @@ $proximo = $pag + 1;
   include('menu.html')
   ?>
   <main style="height: 39vw;">
-    <div class="container my-3 mb-5 p-3 bg-light rounded shadow-lg">
+    <div class="container my-3 mb-5 p-3 bg-light rounded shadow-lg table-responsive-sm">
       <h1 class="my-4">Denuncias recentes</h1>
 
       <table class="table table-striped">

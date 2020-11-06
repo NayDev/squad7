@@ -27,9 +27,10 @@
                 <h2 class="mt-5 torange">Valor</h2>
                 <p class="text-white">Despertar o controle social na população usuária do sistema unico de saúde, contribuir para a melhoria da disponibilidade de medicamentos.
                 </p>
-            </section>
-            <!------------------------------- Rodape -->
+                 <!------------------------------- Rodape -->
             <?php include('rodape.html') ?>
+            </section>
+           
         </main>
     
 </body>

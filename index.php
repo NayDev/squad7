@@ -50,6 +50,13 @@
       .rounded  {
       display: none;
     }
+    span{
+      margin-left: 40%;
+    }
+    .slogan{
+      font-size: 60px;
+      margin-left: 10%;
+    }
   
    
 }
