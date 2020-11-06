@@ -30,6 +30,7 @@
 
     .btn{
       background-color: #6d078e;
+      background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
     }
     .card-img-top{
       width: 100px;
@@ -65,20 +66,20 @@
           <div class="col-6">
             <h1 class="slogan"> <span> DENUNCIE </span> A FALTA DE MEDICAMENTOS!</h1>
           </div>
-          <div class="col-6"><img class="rounded float-right" width="80%" src="./img/med2.png" alt=""></div>
+          <div class="col-6"><img class="rounded float-right" width="0%" src="./img/med.png" alt=""></div>
         </div>
       </div>
     </div>
 
     <section>
-
       <div class="container">
         <div class="row">
+          
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm d-flex justify-content-center">
-              <img class="bd-placeholder-img card-img-top mx-auto mt-3" width="100%" src="https://c.files.bbci.co.uk/1E5C/production/_107427770_hi053578994.jpg" alt="">
+            <div class="card mb-4 shadow-sm">
+              <img class="bd-placeholder-img card-img-top img-responsive mx-auto mt-3" src="./img/sirene.png" alt="Logo">
               <div class="card-body">
-                <p class="card-text text-justify">Acesse a ultimas denúncias. O acesso à informação junto com o direito à saúde, são uns dos direitos fundamentais.</p>
+                <p class="card-text text-justify p-1">Acesse a ultimas denúncias. O acesso à informação junto com o direito à saúde, são uns dos direitos fundamentais.</p>
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="btn-group shadow">
                     <a type="button" href="lista_denuncias.php" class="btn btn-md text-white">Ver denuncias</a>
@@ -90,9 +91,9 @@
 
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-              <img class="bd-placeholder-img card-img-top mx-auto mt-3" width="100%" src="https://c.files.bbci.co.uk/1E5C/production/_107427770_hi053578994.jpg" alt="">
+              <img class="bd-placeholder-img card-img-top img-responsive mx-auto mt-3" src="./img/megafone.png" alt="Logo">
               <div class="card-body">
-                <p class="card-text text-justify">Faça uma reclamação da falta de algum dos medicamento que deveria ser fornecido pelo Sistema Único de Saúde</p>
+                <p class="card-text text-justify p-1">Faça uma reclamação da falta de algum dos medicamento que deveria ser fornecido pelo Sistema Único de Saúde.</p>
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="btn-group shadow">
                     <a type="button" href="cadastrar_denuncias.php" class="btn btn-md text-white">Denunciar</a>
@@ -114,6 +115,7 @@
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
