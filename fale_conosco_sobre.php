@@ -59,9 +59,10 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
         }
       </script>
     </div>
-  </main>
-  <!------------------------------- Rodape -->
+    <!------------------------------- Rodape -->
   <?php include('rodape.html') ?>
+  </main>
+  
 </body>
 
 </html>
