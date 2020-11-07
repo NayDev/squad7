@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastrar Denuncia</title>
+  <title>Cadastrar Denúncia</title>
 
   <?php include('./ADM/bootstrap.html') ?>
 
@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
     <div class="container my-3 p-3 bg-light rounded shadow-lg">
       <form class="container" method="POST" action="cadastrar_denuncias.php">
         <div class="form-group">
-          <h1 class="my-4">Cadastrar Denuncia</h1>
+          <h1 class="my-4">Cadastrar Denúncia</h1>
           <label for="ubs_id">Escolha a UBS</label>
           <select name="ubs_id" class="form-control mb-3">
             <option value="0">Escolha a UBS</option>
@@ -123,7 +123,7 @@ if (isset($_POST['submit'])) {
 
                   </div>
                   <div class="modal-body">
-                    <p>Confirmar o envio da denuncia?</p>
+                    <p>Confirmar o envio da denúncia?</p>
                   </div>
                   <div class="modal-footer">
                     <button type="submit" name="submit" class="btn btn-success">Ok</button>
