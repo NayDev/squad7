@@ -36,7 +36,7 @@ $proximo = $pag + 1;
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Denuncias</title>
+  <title>Lista de Denúncias</title>
   
   <?php include('./ADM/bootstrap.html') ?>
 
@@ -48,7 +48,7 @@ $proximo = $pag + 1;
   ?>
   <main style="height: 39vw;">
     <div class="container my-3 mb-5 p-3 bg-light rounded shadow-lg table-responsive-sm">
-      <h1 class="my-4">Denuncias recentes</h1>
+      <h1 class="my-4">Denúncias recentes</h1>
 
       <table class="table table-striped">
         <tr>
