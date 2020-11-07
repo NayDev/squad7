@@ -108,7 +108,7 @@
                 <p class="card-text text-justify p-1">Acesse a ultimas denúncias. O acesso à informação junto com o direito à saúde, são uns dos direitos fundamentais.</p>
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="btn-group shadow">
-                    <a type="button" href="lista_denuncias.php" class="btn btn-md text-white">Ver denuncias</a>
+                    <a type="button" href="lista_denuncias.php" class="btn btn-md text-white">Ver denúncias</a>
                   </div>
                 </div>
               </div>
@@ -133,7 +133,7 @@
             <div class="card mb-4 shadow-sm">
               <img class="bd-placeholder-img card-img-top img-responsive mx-auto mt-3" src="./img/logo_squad.png" alt="Logo">
               <div class="card-body">
-                <p class="card-text text-justify p-1">Projeto desenvolvido no ano de 2020 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.</p>
+                <p class="card-text text-justify p-1">Projeto desenvolvido no ano de 2020 pelos alunos e alunas do Squad 07 (SP1) da Recode Pro 2020.</p>
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="btn-group shadow">
                     <a type="button" href="fale_conosco_sobre.php" class="btn btn-md text-white">Fale conosco</a>
