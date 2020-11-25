@@ -1,5 +1,9 @@
 -- drop schema sosmedicamentos;
-CREATE schema sosmedicamentos;
+-- CREATE schema sosmedicamentos;
+DROP DATABASE IF EXISTS sosmedicamentos;
+
+
+CREATE DATABASE IF NOT EXISTS sosmedicamentos;
 
 
 USE sosmedicamentos;
